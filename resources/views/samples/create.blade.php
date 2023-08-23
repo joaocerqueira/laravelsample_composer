@@ -1,14 +1,14 @@
 @extends('layouts.layout')
 
 @section('content')
-<div class="flex-center position-ref full-height">
-    <div class="content">
-        <div class="title m-b-md">
-            Create a new Sample
-        </div>
-
-
-
-    </div>
+<div class="wrapper create-sample">
+    <h1>Create a New Sample</h1>
+    <form action="/laravelsample" method="POST">
+        @csrf
+        <label for="name">Description:</label>
+        <input type="text" name="description" id="description" required>
+        <input type="submit" value="Submit Sample">
+    </form>
+    <a href="/laravelsample" class="back"><- Back to all Samples</a>
 </div>
 @endsection

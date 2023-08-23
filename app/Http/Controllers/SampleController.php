@@ -20,10 +20,25 @@ class SampleController extends Controller
       }
 
       public function show($id) {
-        return view('samples.details', ['id' => $id]);
+
+        $sample = Sample::findOrFail($id);
+        return view('samples.show', ['sample' => $sample]);
       }
 
       public function create() {
         return view('samples.create');
+      }
+
+      public function store() {
+        $sample = new Sample();
+        $sample->description = request('description');
+        $sample->save();
+        return redirect('/')->with('mssg', 'New Sample created!');
+      }
+
+      public function destroy($id) {
+        $sample = Sample::findOrFail($id);
+        $sample->delete();
+        return redirect('/')->with('mssg', 'Sample deleted!');
       }
 }

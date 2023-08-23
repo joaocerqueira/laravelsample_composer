@@ -21,6 +21,9 @@
         <div class="title m-b-md">
             Laravel Samples
         </div>
+        <p class="mssg">{{ session('mssg') }}</p><br>
+        <a href="/laravelsample">Show Samples</a><br>
+        <a href="/laravelsample/create">Create new Sample</a>
     </div>
 </div>
 @endsection

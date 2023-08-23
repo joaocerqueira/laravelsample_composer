@@ -1,23 +1,15 @@
 @extends('layouts.layout')
 
 @section('content')
-<div class="flex-center position-ref full-height">
-    <div class="content">
-        <div class="title m-b-md">
-            Samples List
-        </div>
-
-        @foreach($samples as $sample)
-        <div>
-            {{ $loop->index }} - {{ $sample['id'] }} - {{ $sample['description'] }}
-            @if($loop->first)
-            <span> - first in the loop</span>
-            @endif
-            @if($loop->last)
-            <span> - last in the loop</span>
-            @endif
-        </div>
-        @endforeach
+<div class="wrapper sample-index">
+    <h1>Samples</h1>
+    @foreach($samples as $sample)
+    <div class="sample-item">
+        <img src="/img/sample_small.png" alt="sample icon">
+        <h4><a href="/laravelsample/{{ $sample->id }}">{{ $sample->description }}</a></h4>
     </div>
+    @endforeach
+    <a href="../">Home</a><br>
+    <a href="/laravelsample/create">Create new Sample</a>
 </div>
 @endsection

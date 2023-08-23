@@ -1,31 +1,23 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Laravel Sample</title>
 
-    <title>Laravel</title>
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <!-- Styles -->
+        <link href="/css/main.css" rel="stylesheet">
+    </head>
+    <body>
 
-    <!-- Styles -->
-    <link href="/css/main.css" rel="stylesheet">
-</head>
+      @yield('content')
 
-<body>
-
-    @yield('content')
-
-    <footer>
-        <p>
-            @php
-            $phpviewtag = 'Using @php tag on view Samples Footer';
-            echo($phpviewtag);
-            @endphp
-        </p>
-    </footer>
-</body>
-
+      <footer>
+        <p>Laravel Sample</p>
+      </footer>
+    </body>
 </html>
