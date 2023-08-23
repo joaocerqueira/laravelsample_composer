@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+
+  laravelsample_container:
+
+    build: .
+    container_name: laravelsample_container
+    restart: always
+    ports:
+      - 8080:80
+
