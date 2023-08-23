@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.app')
 
 @section('content')
 <div class="wrapper laravelsample-details">
@@ -7,13 +7,13 @@
   <p class="description">Description - {{ $sample->description }}</p>
   <br><br>
 
-  <form action="/laravelsample/{{ $sample->id }}" method="POST">
+  <form action="{{ route('samples.destroy', $sample->id) }}" method="POST">
     @csrf
     @method('DELETE')
     <button>Delete Sample</button>
   </form>
 
   <br><br>
-  <a href="/laravelsample" class="back"><- Back to all Samples</a>
+  <a href="{{ route('samples.index') }}" class="back"><- Back to all Samples</a>
 </div>
 @endsection

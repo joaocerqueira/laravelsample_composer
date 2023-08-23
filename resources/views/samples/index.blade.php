@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.app')
 
 @section('content')
 <div class="wrapper sample-index">
@@ -6,10 +6,9 @@
     @foreach($samples as $sample)
     <div class="sample-item">
         <img src="/img/sample_small.png" alt="sample icon">
-        <h4><a href="/laravelsample/{{ $sample->id }}">{{ $sample->description }}</a></h4>
+        <h4><a href="{{ route('samples.destroy', $sample->id) }}">{{ $sample->description }}</a></h4>
     </div>
     @endforeach
-    <a href="../">Home</a><br>
-    <a href="/laravelsample/create">Create new Sample</a>
+    <a href="{{ route('samples.index') }}">Create new Sample</a>
 </div>
 @endsection
